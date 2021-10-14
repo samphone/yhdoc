@@ -18,8 +18,8 @@ module.exports = {
                 collapsable: false,
                 children: [
                     'background/1-起源',
-                    'background/2-项目迭代历史',
-                    'background/3-常见对接注意点'
+                    'background/2-常见对接注意点',
+                    'background/3-项目迭代历史'
                 ]
             },
             {
@@ -33,7 +33,7 @@ module.exports = {
                 ]
             }
         ],
-        lastUpdated: 'Last Updated',
+        lastUpdated: '上次更新时间',
     },
     plugins: [
         [
@@ -43,7 +43,7 @@ module.exports = {
                 // 不要忘了安装 moment
                 const moment = require('moment')
                 moment.locale(lang)
-                return moment(timestamp).fromNow()
+                return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
             }
             }
         ]
