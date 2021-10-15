@@ -25,6 +25,7 @@ module.exports = {
             {
                 title: 'H5-机票',
                 collapsable: false,
+                sidebarDepth: 2,
                 children: [
                     'h5Flight/1-简介',
                     'h5Flight/2-目录介绍',
