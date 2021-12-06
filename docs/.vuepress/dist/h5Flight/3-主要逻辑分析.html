@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>主要逻辑分析 | 英行前端项目文档</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="英行前端项目文档">
+    
+    <link rel="preload" href="/assets/css/0.styles.35bcedcf.css" as="style"><link rel="preload" href="/assets/js/app.786aee9e.js" as="script"><link rel="preload" href="/assets/js/2.94668460.js" as="script"><link rel="preload" href="/assets/js/21.2b32c666.js" as="script"><link rel="prefetch" href="/assets/js/10.74cf8540.js"><link rel="prefetch" href="/assets/js/11.18b76b59.js"><link rel="prefetch" href="/assets/js/12.6e794fd3.js"><link rel="prefetch" href="/assets/js/13.c2ed454b.js"><link rel="prefetch" href="/assets/js/14.e3388802.js"><link rel="prefetch" href="/assets/js/15.f11b9fa1.js"><link rel="prefetch" href="/assets/js/16.489424b5.js"><link rel="prefetch" href="/assets/js/17.9cfb3aa8.js"><link rel="prefetch" href="/assets/js/18.d17e4e8c.js"><link rel="prefetch" href="/assets/js/19.571eec9f.js"><link rel="prefetch" href="/assets/js/20.52ebe429.js"><link rel="prefetch" href="/assets/js/22.fe780fdf.js"><link rel="prefetch" href="/assets/js/23.d140a24a.js"><link rel="prefetch" href="/assets/js/24.b361252d.js"><link rel="prefetch" href="/assets/js/25.fb2273d5.js"><link rel="prefetch" href="/assets/js/26.dfd289fa.js"><link rel="prefetch" href="/assets/js/27.dd6f4611.js"><link rel="prefetch" href="/assets/js/28.97ba1a85.js"><link rel="prefetch" href="/assets/js/29.885e1e73.js"><link rel="prefetch" href="/assets/js/3.318040fc.js"><link rel="prefetch" href="/assets/js/30.6cff4fc1.js"><link rel="prefetch" href="/assets/js/31.e8383fc6.js"><link rel="prefetch" href="/assets/js/32.1a4674c3.js"><link rel="prefetch" href="/assets/js/33.b01179e2.js"><link rel="prefetch" href="/assets/js/34.4f57d661.js"><link rel="prefetch" href="/assets/js/4.e8c26340.js"><link rel="prefetch" href="/assets/js/5.f4338c1b.js"><link rel="prefetch" href="/assets/js/6.7dd3e1f3.js"><link rel="prefetch" href="/assets/js/7.5e846fe9.js"><link rel="prefetch" href="/assets/js/8.ad336775.js"><link rel="prefetch" href="/assets/js/9.0d4c48c8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.35bcedcf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="英行前端项目文档" class="logo"> <span class="site-name can-hide">英行前端项目文档</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/b.html" class="nav-link">
+  github
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/b.html" class="nav-link">
+  github
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>background</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>H5-flight</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/h5Flight/1-简介.html" class="sidebar-link">简介</a></li><li><a href="/h5Flight/2-目录介绍.html" class="sidebar-link">目录介绍</a></li><li><a href="/h5Flight/3-主要逻辑分析.html" class="active sidebar-link">主要逻辑分析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#首页" class="sidebar-link">首页</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#轮播图" class="sidebar-link">轮播图</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#起始城市" class="sidebar-link">起始城市</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#日期" class="sidebar-link">日期</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#搜索" class="sidebar-link">搜索</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#优惠券" class="sidebar-link">优惠券</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#个人中心" class="sidebar-link">个人中心</a></li></ul></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#查询列表" class="sidebar-link">查询列表</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#日期tab" class="sidebar-link">日期tab</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#疫情提醒通知" class="sidebar-link">疫情提醒通知</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#列表信息展示" class="sidebar-link">列表信息展示</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#筛选" class="sidebar-link">筛选</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#改签" class="sidebar-link">改签</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#缓存" class="sidebar-link">缓存</a></li></ul></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#机票详情" class="sidebar-link">机票详情</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#经停信息展示" class="sidebar-link">经停信息展示</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#数据类型-pricetype" class="sidebar-link">数据类型(priceType)</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#tag标签展示" class="sidebar-link">tag标签展示</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#验价" class="sidebar-link">验价</a></li></ul></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#创单" class="sidebar-link">创单</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#乘客操作" class="sidebar-link">乘客操作</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#行程单" class="sidebar-link">行程单</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#下单" class="sidebar-link">下单</a></li></ul></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#订单列表" class="sidebar-link">订单列表</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#tab筛选展示" class="sidebar-link">tab筛选展示</a></li></ul></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#订单详情" class="sidebar-link">订单详情</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#改签航班信息展示" class="sidebar-link">改签航班信息展示</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#退票" class="sidebar-link">退票</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#改签-2" class="sidebar-link">改签</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#取消订单" class="sidebar-link">取消订单</a></li></ul></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#接口说明" class="sidebar-link">接口说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#航班列表查询" class="sidebar-link">航班列表查询</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#航班详情查询" class="sidebar-link">航班详情查询</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#舱位验价" class="sidebar-link">舱位验价</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#创单-2" class="sidebar-link">创单</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#订单列表-2" class="sidebar-link">订单列表</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#订单详情-2" class="sidebar-link">订单详情</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#退改签状态查询" class="sidebar-link">退改签状态查询</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#改签航班列表查询" class="sidebar-link">改签航班列表查询</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#改签提交" class="sidebar-link">改签提交</a></li><li class="sidebar-sub-header"><a href="/h5Flight/3-主要逻辑分析.html#退票提交" class="sidebar-link">退票提交</a></li></ul></li></ul></li><li><a href="/h5Flight/4-其他.html" class="sidebar-link">其他</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>H5-hotel</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>H5-train</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>H5-common</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>H5-blindBox</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>App</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="主要逻辑分析"><a href="#主要逻辑分析" class="header-anchor">#</a> 主要逻辑分析</h1> <p>介绍机票流程的主要逻辑</p> <h2 id="首页"><a href="#首页" class="header-anchor">#</a> 首页</h2> <p>首页分为机票首页和个人中心两个页面</p> <ul><li>机票首页包括轮播图、城市选择、日期选择、搜索、优惠券、精选航线展示等功能</li> <li>个人中心包括优惠券、积分以及功能导航选项</li></ul> <h3 id="轮播图"><a href="#轮播图" class="header-anchor">#</a> 轮播图</h3> <p>展示规则：根据字段status，若值为1则展示轮播图</p> <p>跳转规则：根据字段activityname，若值可被'-'分割且【1】为inside则项目内跳转 否则直接跳转外部</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">loadBannerLink</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> url</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> temp <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> flag <span class="token operator">=</span> temp<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token punctuation">(</span>temp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'inside'</span> <span class="token operator">?</span> <span class="token boolean">true</span> <span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  	<span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+  	window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href <span class="token operator">=</span> url
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="起始城市"><a href="#起始城市" class="header-anchor">#</a> 起始城市</h3> <p>展示规则：若没有缓存，则展示定位的当前城市</p> <h3 id="日期"><a href="#日期" class="header-anchor">#</a> 日期</h3> <p>进入选择日期页面时先请求低价日历接口获取，以便页面展示</p> <h3 id="搜索"><a href="#搜索" class="header-anchor">#</a> 搜索</h3> <ul><li>起始城市非空判断</li> <li>增加搜索历史记录</li> <li>查询历史搜索列表接口</li></ul> <h3 id="优惠券"><a href="#优惠券" class="header-anchor">#</a> 优惠券</h3> <ul><li>配置显示</li> <li>优惠券展示类型
+<ol><li>新人券 couponType === 5</li> <li>限时券 couponType === 4</li> <li>其他券</li></ol></li></ul> <h3 id="个人中心"><a href="#个人中心" class="header-anchor">#</a> 个人中心</h3> <ul><li>积分和优惠券配置展示</li> <li>功能导航栏。
+<strong>值机选座、问题反馈跳转H5-common项目</strong></li></ul> <h2 id="查询列表"><a href="#查询列表" class="header-anchor">#</a> 查询列表</h2> <p>列表页主要包含以下几个功能</p> <ul><li>日期tab</li> <li>列表展示</li> <li>数据筛选以及排序</li> <li>改签</li> <li>页面缓存</li></ul> <h3 id="日期tab"><a href="#日期tab" class="header-anchor">#</a> 日期tab</h3> <p>展示距离当前选择日期往后4天的日期选择</p> <ul><li>点击日期tab 重新请求数据</li> <li>选择低价日历进入日期选择页面 返回则刷新日期tab并请求数据</li></ul> <h3 id="疫情提醒通知"><a href="#疫情提醒通知" class="header-anchor">#</a> 疫情提醒通知</h3> <p>根据列表返回的字段（<strong>tips</strong>）决定是否展示疫情通知相关信息</p> <h3 id="列表信息展示"><a href="#列表信息展示" class="header-anchor">#</a> 列表信息展示</h3> <ul><li><p>经停  stops &gt; 0</p></li> <li><p>跨天数  计算到达时间和起飞时间的时间差</p></li> <li><p>票数展示 saleSeats === ‘A’ 票量充足</p></li> <li><p>航司icon <code>https://yunji-flight.oss-cn-shenzhen.aliyuncs.com/images/airlineIcon/${compImg}</code></p></li> <li><p>舱等信息展示</p> <ul><li><p>minDiscount 折扣</p></li> <li><p>isHasBOrFCabin 头等舱/商务舱</p></li> <li><p>isHasEconomyCabin 经济舱</p> <p>若minDiscount &gt;= 10 则展示经济舱或者头等舱/商务舱全家，否则则按minDiscount展示对应的折扣</p></li></ul></li></ul> <h3 id="筛选"><a href="#筛选" class="header-anchor">#</a> 筛选</h3> <p>筛选数据来源</p> <ul><li>起飞时间 24h</li> <li>航司 acCompMap</li> <li>舱等  经济舱 头等舱/商务舱</li> <li>起飞机场 depAirportCompMap</li> <li>到达机场 arrAirportCompMap</li></ul> <h3 id="改签"><a href="#改签" class="header-anchor">#</a> 改签</h3> <p>根据订单详情跳转传参判断是否是改签查询</p> <h3 id="缓存"><a href="#缓存" class="header-anchor">#</a> 缓存</h3> <p>首页 =&gt; 列表 =&gt; 详情  =&gt; 列表 缓存页面</p> <p>列表 =&gt; 首页 清除缓存 clearCache</p> <h2 id="机票详情"><a href="#机票详情" class="header-anchor">#</a> 机票详情</h2> <h3 id="经停信息展示"><a href="#经停信息展示" class="header-anchor">#</a> 经停信息展示</h3> <p>stops&gt;0</p> <h3 id="数据类型-pricetype"><a href="#数据类型-pricetype" class="header-anchor">#</a> 数据类型(priceType)</h3> <p>经济舱特价数据不选择意外保险的情况下机票价格+10</p> <h3 id="tag标签展示"><a href="#tag标签展示" class="header-anchor">#</a> tag标签展示</h3> <ul><li><p>经济舱:
+suppsaleType = qspecial  &amp;&amp; priceType = 0: 针对所有: 有保险的: 特惠低价
+suppsaleType = qnormal  &amp;&amp; priceType = 1: 针对所有: 报销无忧</p> <p>suppsaleType = IBE &amp;&amp; priceType = 1 打第一个: 报销无忧</p></li> <li><p>商务舱:
+suppsaleType = qspecial 打第一个: 特惠低价
+suppsaleType = IBE &amp;&amp; priceType = 1 打第一个: 报销无忧</p></li></ul> <h3 id="验价"><a href="#验价" class="header-anchor">#</a> 验价</h3> <p>点击预订先进行验价操作成功后才能进行创单, 返回数据作为下单参数传递过去</p> <h2 id="创单"><a href="#创单" class="header-anchor">#</a> 创单</h2> <h3 id="乘客操作"><a href="#乘客操作" class="header-anchor">#</a> 乘客操作</h3> <ol><li>删除选择乘客</li> <li>编辑选择乘客</li></ol> <h3 id="行程单"><a href="#行程单" class="header-anchor">#</a> 行程单</h3> <p>可选</p> <p>点击选择请求接口获取上次行程信息</p> <h3 id="下单"><a href="#下单" class="header-anchor">#</a> 下单</h3> <p>伪装loading状态</p> <p>下单完成后延时取消loading面板</p> <h2 id="订单列表"><a href="#订单列表" class="header-anchor">#</a> 订单列表</h2> <h3 id="tab筛选展示"><a href="#tab筛选展示" class="header-anchor">#</a> tab筛选展示</h3> <p>前端根据状态筛选做订单筛选</p> <table><thead><tr><th style="text-align:center;"></th> <th style="text-align:center;">全部</th> <th style="text-align:center;">有效单</th> <th style="text-align:center;">待支付</th> <th style="text-align:center;">退款单</th></tr></thead> <tbody><tr><td style="text-align:center;">status</td> <td style="text-align:center;">-</td> <td style="text-align:center;">2，3</td> <td style="text-align:center;">0，1，10，11</td> <td style="text-align:center;">3</td></tr></tbody></table> <h2 id="订单详情"><a href="#订单详情" class="header-anchor">#</a> 订单详情</h2> <h3 id="改签航班信息展示"><a href="#改签航班信息展示" class="header-anchor">#</a> 改签航班信息展示</h3> <p>改签航班信息展示与原航班信息展示共用一个模版，但是接口返回数据字段不一致，需要做一次映射处理，使其与原航班数据字段保持一致</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token comment">// 处理改签数据方便模版渲染</span>
+<span class="token function">dealChangeListToOrderInfo</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>chgInfoList <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token comment">// 渲染字段映射</span>
+      el<span class="token punctuation">.</span>departdate <span class="token operator">=</span> el<span class="token punctuation">.</span>chgDepDate
+      el<span class="token punctuation">.</span>deptime <span class="token operator">=</span> el<span class="token punctuation">.</span>chgDepTime
+      el<span class="token punctuation">.</span>arrdate <span class="token operator">=</span> el<span class="token punctuation">.</span>chgArrDate
+      el<span class="token punctuation">.</span>arrtime <span class="token operator">=</span> el<span class="token punctuation">.</span>chgArrTime
+
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgDepDate
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgDepTime
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgArrDate
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgArrTime
+
+      el<span class="token punctuation">.</span>depcitycn <span class="token operator">=</span> el<span class="token punctuation">.</span>chgDepCityCn
+      el<span class="token punctuation">.</span>arrcitycn <span class="token operator">=</span> el<span class="token punctuation">.</span>chgArrCityCn
+      el<span class="token punctuation">.</span>cabinclass <span class="token operator">=</span> el<span class="token punctuation">.</span>chgCabinClass
+
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgDepCityCn
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgArrCityCn
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgCabinClass
+
+      el<span class="token punctuation">.</span>depterminal <span class="token operator">=</span> el<span class="token punctuation">.</span>departTerminal
+      el<span class="token punctuation">.</span>arrterminal <span class="token operator">=</span> el<span class="token punctuation">.</span>arrTerminal
+      el<span class="token punctuation">.</span>stopInfo <span class="token operator">=</span> el<span class="token punctuation">.</span>chgStopInfo
+      el<span class="token punctuation">.</span>duration <span class="token operator">=</span> el<span class="token punctuation">.</span>chgDuration
+
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>departTerminal
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>arrTerminal
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgStopInfo
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgDuration
+
+      el<span class="token punctuation">.</span>accn <span class="token operator">=</span> el<span class="token punctuation">.</span>chgCarrierName
+      el<span class="token punctuation">.</span>flightno <span class="token operator">=</span> el<span class="token punctuation">.</span>chgFlightNo
+      el<span class="token punctuation">.</span>hasmeal <span class="token operator">=</span> el<span class="token punctuation">.</span>isMeal
+
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgCarrierName
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgFlightNo
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>isMeal
+
+      el<span class="token punctuation">.</span>operatingcode <span class="token operator">=</span> el<span class="token punctuation">.</span>chgoperatingcode
+      el<span class="token punctuation">.</span>operatingcarrier <span class="token operator">=</span> el<span class="token punctuation">.</span>chgoperatingcarrier
+      el<span class="token punctuation">.</span>operatingairlinename <span class="token operator">=</span> el<span class="token punctuation">.</span>chgoperatingairlinename
+      el<span class="token punctuation">.</span>operatingcode <span class="token operator">=</span> el<span class="token punctuation">.</span>chgoperatingcode
+
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgoperatingcode
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgoperatingcarrier
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgoperatingairlinename
+      <span class="token keyword">delete</span> el<span class="token punctuation">.</span>chgoperatingcode
+
+      <span class="token comment">// 行李额规则处理  改签单</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>el<span class="token punctuation">.</span>luggageRules <span class="token operator">&amp;&amp;</span> el<span class="token punctuation">.</span>luggageRules<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        el<span class="token punctuation">.</span>luggageRules<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">lu</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span>lu<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            el<span class="token punctuation">.</span>tyLuggageRules <span class="token operator">=</span> lu <span class="token comment">// 托运行李额</span>
+          <span class="token punctuation">}</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span>lu<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            el<span class="token punctuation">.</span>stLuggageRules <span class="token operator">=</span> lu <span class="token comment">// 手提行李额</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> el
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>chgInfoList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="退票"><a href="#退票" class="header-anchor">#</a> 退票</h3> <ol><li>判断退改人是否存在退票单</li> <li>展示预估退票费用面板</li> <li>选择退票理由</li> <li>提交退票申请</li></ol> <h3 id="改签-2"><a href="#改签-2" class="header-anchor">#</a> 改签</h3> <ol><li>判断退改人是否存在改签单</li> <li>展示改签费用面板</li> <li>跳转改签列表页选择航班 query: { isChangeFlag: true }</li> <li>提交改签申请</li></ol> <h3 id="取消订单"><a href="#取消订单" class="header-anchor">#</a> 取消订单</h3> <p>取消弹框：含泪取消，立即支付</p> <h2 id="接口说明"><a href="#接口说明" class="header-anchor">#</a> 接口说明</h2> <h3 id="航班列表查询"><a href="#航班列表查询" class="header-anchor">#</a> 航班列表查询</h3> <p>https://flighttest.yhair.cc/yhtestqueryservice/flight/flightQuery</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  arrCity<span class="token operator">:</span> <span class="token string">&quot;SHA&quot;</span><span class="token punctuation">,</span>
+  depCity<span class="token operator">:</span> <span class="token string">&quot;CAN&quot;</span><span class="token punctuation">,</span>
+  departDate<span class="token operator">:</span> <span class="token string">&quot;2021-12-09&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>{
+	acCompMap: [  筛选航司数据
+		{
+			carr: '',
+			airName: ''
+		}
+	],
+	arrAirportCompMap: [ 筛选到达机场数据
+		{
+			arrAirport: '',
+			arrAirportAbbr: ''
+		}
+	],
+	depAirportCompMap: [ 筛选出发机场数据
+		{
+			depAirport: '',
+			depAirportAbbr: ''
+		}
+	],
+	tips: [ 防疫通知
+		{
+			title: '',
+			text: ''
+		}
+	],
+	flights: [
+		{
+			dptTime: '', 起飞时间
+			depAirportCn: '', 起飞机场
+			dptTerminal: '', 起飞机场航站楼
+			arrTime: '', 到达时间
+			arrCityCn:'', 到达机场
+			arrTerminal:'', 到达机场航站楼
+			stops: '', 是否经停
+			minPrice: '', 最低价格
+			saleSeats: '' 票量是否充足 A 充足
+			compImg: '', 航司图片地址 https://yunji-flight.oss-cn-shenzhen.aliyuncs.com/images/airlineIcon/ + compImg
+			airlineName: '', 航司名称
+			code: '', 航司代码
+			planeType: '', 机型代号
+			planeSize: '', 飞机尺寸,
+			operatingCode: '', 是否是共享航班
+			minDiscount: '', 优惠几折
+			isHasEconomyCabin: '', 是否有经济舱等
+			code: '', 航班代号
+		}
+	]
+}
+</code></pre></div><h3 id="航班详情查询"><a href="#航班详情查询" class="header-anchor">#</a> 航班详情查询</h3> <p>https://flighttest.yhair.cc/yhtestqueryservice/flight/flightQuery</p> <div class="language- extra-class"><pre class="language-text"><code>{
+	arrCity: &quot;SHA&quot;,
+  depCity: &quot;CAN&quot;,
+  departDate: &quot;2021-12-09&quot;,
+  flightNo: &quot;9C6526&quot;,
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>flights: [
+	{
+		code: '', 航班号
+		dptAirport: '', 出发城市三字码
+		arrAirport: '', 到达城市三字码
+		dptDate: '', 出发日期
+		arrDate: '', 到达日期
+    dptTime: '', 起飞时间
+    arrTime: '', 到达时间
+    depAirportCn: '', 起飞机场
+    arrCityCn:'', 到达机场
+    dptCityCn: '', 出发城市
+    arrCityCn: '', 到达城市
+    dptTerminal: '', 起飞机场航站楼
+    arrTerminal:'', 到达机场航站楼
+    duration: '', 飞行时间
+    compImg: '', 航司图片地址 https://yunji-flight.oss-cn-shenzhen.aliyuncs.com/images/airlineIcon/ + compImg
+    airlineName: '', 航司名称
+    planeTypeName: '', 机型名称
+    planeType: '', 机型代号
+    planeSize: '', 飞机尺寸
+    meal: '', 是否有餐饮
+    operatingCarrier: '', 共享航班航司代号 图片拼接
+    operatingAirlineName: '',共享航班名称
+    operatingCode: '', 共享航班代号
+    checkString: '', 验价参数
+    cabinPrices: [
+    	{
+    		cabinClass: '', 舱等代码 1 经济舱 2，3 商务舱/头等舱
+    		suppsaleType: '', 数据源
+    		priceType: '', 价格类型
+    		salePrice: '', 价格 price === 0 &amp;&amp; 未选择保险 价格+10
+    		discount: '', 优惠几折
+    		minRefChgPrice: '', 最低退改费用
+    		seatsForSale: '', 剩余票数  9 || A 不显示
+    		fullPrice: '', 舱等全价
+    		passType: '', 可无 历史原因
+    		cabinYprice: '', Y舱价格
+    		saleCabinCode: '',舱位代码
+    		printPrice: '',票面价
+    		ticketInvoiceType: '',行程单
+    		commission: '',佣金
+    		subsidyPrice: '',云集平台补贴金额
+    		discountPrice: '',直降金额
+        chdPrice: '', 儿童/婴儿票价格
+        chdAirportFee: '', 儿童/婴儿票机建费用
+        chdFuelTax: '', 儿童/婴儿票燃油费用
+        airportFee: '', 成人机建费用
+        fuelTax: '',  成人燃油费用
+    		luggageRules: [
+    			{
+    				type: '', 2 托运行李额 1 手提行李额
+    				desc1: '', 托运行李额说明 html可解析
+    				weight: '' 0 无免费行李额
+    			}
+    		],
+        rules: {
+          refundStipulate: '', 成人退票手续费
+          changeStipulate: '', 成人同舱改签费
+          modifyStipulate: '', 成人签转说明
+          chdRefundStipulate: '', 儿童退票手续费
+          chdChangeStipulate: '', 儿童同舱改签费
+          chdModifyStipulate: ''  儿童签转说明
+        }
+    	}
+    ]
+	}
+]
+</code></pre></div><h3 id="舱位验价"><a href="#舱位验价" class="header-anchor">#</a> 舱位验价</h3> <p>http://flighttest.yhair.cc/yhtestcheckservice/flight/checkPriceNew</p> <div class="language- extra-class"><pre class="language-text"><code>{
+	checkString:'' 舱位checkString字段
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&quot;xxxxxx&quot; 一段字符串 下单时传递
+</code></pre></div><h3 id="创单-2"><a href="#创单-2" class="header-anchor">#</a> 创单</h3> <p>http://flighttest.yhair.cc/yhtcback/tc/code/yhH5OrderIn</p> <div class="language- extra-class"><pre class="language-text"><code>{
+    &quot;couponId&quot;:null, 优惠券id
+    &quot;couponAmount&quot;:0, 优惠券金额
+    &quot;integralNum&quot;:0, 积分数量
+    &quot;integralPrice&quot;:0, 积分抵扣的钱
+    &quot;operatingCode&quot;:null, 共享航班代码
+    &quot;operatingCarrier&quot;:null, 共享航班航司编号
+    &quot;operatingAirlineName&quot;:null, 共享航班航司名称
+    &quot;checkString&quot;:&quot;&quot;, checkString
+    &quot;order&quot;:&quot;&quot;, 验价返回的数据
+    &quot;userId&quot;:&quot;&quot;,
+    &quot;insureList&quot;:[ 保险数据
+        {
+            &quot;productid&quot;:&quot;700001&quot;,
+            &quot;count&quot;:0
+        },
+        {
+            &quot;productid&quot;:&quot;500002&quot;,
+            &quot;count&quot;:1
+        },
+        {
+            &quot;productid&quot;:&quot;600001&quot;,
+            &quot;count&quot;:0
+        }
+    ],
+    &quot;linkMan&quot;:&quot;李三&quot;,      联系人
+    &quot;linkPhone&quot;:&quot;13333333333&quot;,
+    &quot;contactName&quot;:null,   行程单
+    &quot;contactPhone&quot;:null,
+    &quot;expressFee&quot;:0,
+    &quot;contactAddress&quot;:null,
+    &quot;totalPrice&quot;:&quot;289.00&quot;, 总价
+    &quot;segments&quot;:[
+        {
+            &quot;code&quot;:&quot;9C6526&quot;,
+            &quot;operatingCode&quot;:&quot;&quot;,
+            &quot;dptDate&quot;:&quot;2021-12-09&quot;,
+            &quot;arrDate&quot;:&quot;2021-12-09&quot;,
+            &quot;dptTime&quot;:&quot;11:40&quot;,
+            &quot;arrTime&quot;:&quot;13:55&quot;,
+            &quot;dptAirport&quot;:&quot;CAN&quot;,
+            &quot;arrAirport&quot;:&quot;PVG&quot;,
+            &quot;depCityCn&quot;:&quot;广州&quot;,
+            &quot;arrCityCn&quot;:&quot;上海浦东&quot;,
+            &quot;acCn&quot;:&quot;春秋航空&quot;,
+            &quot;depTerminal&quot;:&quot;白云国际机场T1&quot;,
+            &quot;arrTerminal&quot;:&quot;浦东国际机场T2&quot;,
+            &quot;duration&quot;:&quot;2小时15分钟&quot;,
+            &quot;isMeal&quot;:false,
+            &quot;cabinPrice&quot;:[
+                {
+                    &quot;fullPrice&quot;:1620,
+                    &quot;cabinYprice&quot;:1620,
+                    &quot;chdPrice&quot;:810,
+                    &quot;cabinClass&quot;:&quot;1&quot;,
+                    &quot;saleCabinCode&quot;:&quot;P1&quot;,
+                    &quot;suppsaleType&quot;:&quot;qspecial&quot;,
+                    &quot;salePrice&quot;:189,
+                    &quot;printPrice&quot;:189,
+                    &quot;airportFee&quot;:50,
+                    &quot;fuelTax&quot;:20,
+                    &quot;ticketInvoiceType&quot;:2,
+                    &quot;commission&quot;:0,
+                    &quot;subsidyPrice&quot;:null,
+                    &quot;discountPrice&quot;:null,
+                    &quot;realPrice&quot;:189,
+                    &quot;chdAirportFee&quot;:0,
+                    &quot;chdFuelTax&quot;:10
+                }
+            ]
+        }
+    ],
+    &quot;passengers&quot;:[
+        {
+            &quot;name&quot;:&quot;李三&quot;,
+            &quot;cardType&quot;:&quot;NI&quot;,
+            &quot;type&quot;:0,
+            &quot;cardNo&quot;:&quot;110101199303077776&quot;,
+            &quot;phone&quot;:&quot;13333333333&quot;,
+            &quot;birthday&quot;:&quot;1993-03-07&quot;,
+            &quot;airportFee&quot;:50, 
+            &quot;fuelTax&quot;:20
+        }
+    ],
+    &quot;priceType&quot;:0
+}
+</code></pre></div><h3 id="订单列表-2"><a href="#订单列表-2" class="header-anchor">#</a> 订单列表</h3> <p>http://flighttest.yhair.cc/yhtcback/tc/code/queryYhOrder</p> <div class="language- extra-class"><pre class="language-text"><code>{
+  consumerid: &quot;hbJVx56QlwBUP9Dbv6fJPg&quot;,
+  page: 1, 
+  row: 20,
+  type: 1, 
+  userid: &quot;hbJVx56QlwBUP9Dbv6fJPg&quot;
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>{
+	totalPage: ''
+	orderList: [
+		{
+			status: '', 订单状态
+			orderno: '', 订单号
+			accn: '', 航司
+			depcitycn: '', 出发城市
+			arrcitycn: '', 到达城市
+			totalprice: '', 票价
+			departdate: '', 出发日期
+			deptime: '', 出发时间
+			arrtime: '', 到达时间
+			addtimefmt: '' 下单时间
+		}
+	]
+}
+</code></pre></div><h3 id="订单详情-2"><a href="#订单详情-2" class="header-anchor">#</a> 订单详情</h3> <p>http://flighttest.yhair.cc/yhtcback/tc/code/queryYhOrder</p> <div class="language- extra-class"><pre class="language-text"><code>{
+	consumerid: &quot;hbJVx56QlwBUP9Dbv6fJPg&quot;,
+  orderno: &quot;YHQISHI20211203162258504&quot;,
+  shopid: null,
+  type: 3,
+  userid: &quot;hbJVx56QlwBUP9Dbv6fJPg&quot;,
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>{
+	lotteryNum: '', 抽奖次数 用于显示抽奖入口
+	chdFuelTax: '', 儿童燃油费用 用于退改规则展示
+	chdAirportFee: '', 儿童机建费用
+	orderInfo: {
+		id: '',
+		status: '', 
+		orderno: '',
+		totalprice: '', 总价
+		saleprice: '', 成人价格
+		chdPrice: '', 儿童价格
+		expressfee: '', 行程单费用
+		couponAmount: '',
+		integralnum: '',
+		integralprice: '',
+		accn: '',
+		flightno: '',
+		hasmeal: '',
+		departDate: '',
+		arrdate: '',
+		depairport: '',
+		arrairport: '',
+		deptime: '',
+		depterminal: '',
+		arrtime: '',
+		arrterminal: '',
+		duration: '',
+		operatingcarrier: '',
+		operatingairlinename: '',
+		operatingcode: '',
+		linkman: '',
+		linkphone: '',
+    luggageRules: [
+      {
+        type: '', 2 托运行李额 1 手提行李额
+        desc1: '', 托运行李额说明 html可解析
+        weight: '' 0 无免费行李额
+      }
+    ],
+    rules: {
+      refundStipulate: '', 成人退票手续费
+      changeStipulate: '', 成人同舱改签费
+      modifyStipulate: '', 成人签转说明
+      chdRefundStipulate: '', 儿童退票手续费
+      chdChangeStipulate: '', 儿童同舱改签费
+      chdModifyStipulate: ''  儿童签转说明
+    }
+	},
+	passengerList: [
+		{
+			id: '',
+			name: '',
+			cardtype: '',
+			cardno: '',
+			status: '',
+			refundstatus: '', 1 退票中 2 退票完成
+			chgstatus: '', 1 改签中 2 改签完成
+			ticketno: '',
+			chgstatus: '',
+			passtype: '',
+			airportfee: '',
+			fueltax: '',
+			hasaccidentinsure: '', 1 true 0 false
+			accidentinsureprice: '', 
+			hasrefundinsure: '',
+			refundinsureprice: '',
+			hasdelayinsure: '',
+			delayinsureprice: '',
+			rules: {
+				chdChangeStipulateDate: '', 改签预估价格数据JSON.stringfy
+				changeStipulateDate: '',
+				chdRefundStipulateDate: '', 退票预估价格数据JSON.stringfy
+				refundStipulateDate: ''，
+				chdInvoluntaryRefundTip: '',退票原因对应不同提示
+				involuntaryRefundTip: '',
+				chdVoluntarilyRefundTip: '',
+				voluntarilyRefundTip: '',
+				chdOtherReasonsRefundTip: '',
+				otherReasonsRefundTip: ''
+			}
+		}
+	],
+	chgInfoList: [
+		{
+				chgDepDate: '',
+				chgDepTime: '',
+				chgArrDate: '',
+				chgArrTime: '',
+				chgDepCityCn: '',
+				chgArrCityCn: '',
+				chgCabinClass: '',
+				departTerminal: '',
+				arrTerminal: '',
+				chgStopInfo: '',
+				chgDuration: '',
+				chgCarrierName: '',
+				chgFlightNo: '',
+				isMeal: '',
+				chgoperatingcode: '',
+				chgoperatingcarrier: '',
+				chgoperatingairlinename: '',
+				chgoperatingcode: '',
+				status: '',
+				departTerminal: '',
+				arrTerminal: ''
+		}
+	]
+}
+</code></pre></div><h3 id="退改签状态查询"><a href="#退改签状态查询" class="header-anchor">#</a> 退改签状态查询</h3> <p>https://flighttest.yhair.cc/yhtcback/tc/code/getPsgById</p> <div class="language- extra-class"><pre class="language-text"><code>{
+	id: 1760003, 乘客列表的id 这个接口例外 没有签名包装
+  sign: &quot;eb70fbca44bcba96b4fc13d71a572b41&quot;,
+  timestamp: 1638524365000,
+  user: &quot;qishi&quot;,
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>{
+	YhOrderPassenger: {
+		refundstatus: '',  1，2 中断退改
+		chgstatus: ''1，2 中断退改
+	}
+}
+</code></pre></div><h3 id="改签航班列表查询"><a href="#改签航班列表查询" class="header-anchor">#</a> 改签航班列表查询</h3> <p>https://flighttest.yhair.cc/yhtestqueryservice/flight/flightQuery</p> <div class="language- extra-class"><pre class="language-text"><code>{
+  arrCity: &quot;PVG&quot;,
+  carrier: &quot;9C&quot;,
+  dataType: &quot;chgFlight&quot;,
+  depCity: &quot;CAN&quot;,
+  departDate: &quot;2021-12-09&quot;,
+  flightNo: &quot;9C6686&quot;,
+  price: &quot;199&quot;,
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>{
+	acCompMap: [  筛选航司数据
+		{
+			carr: '',
+			airName: ''
+		}
+	],
+	arrAirportCompMap: [ 筛选到达机场数据
+		{
+			arrAirport: '',
+			arrAirportAbbr: ''
+		}
+	],
+	depAirportCompMap: [ 筛选出发机场数据
+		{
+			depAirport: '',
+			depAirportAbbr: ''
+		}
+	],
+	tips: [ 防疫通知
+		{
+			title: '',
+			text: ''
+		}
+	],
+	flights: [
+		{
+			dptTime: '', 起飞时间
+			depAirportCn: '', 起飞机场
+			dptTerminal: '', 起飞机场航站楼
+			arrTime: '', 到达时间
+			arrCityCn:'', 到达机场
+			arrTerminal:'', 到达机场航站楼
+			stops: '', 是否经停
+			minPrice: '', 最低价格
+			saleSeats: '' 票量是否充足 A 充足
+			compImg: '', 航司图片地址 https://yunji-flight.oss-cn-shenzhen.aliyuncs.com/images/airlineIcon/ + compImg
+			airlineName: '', 航司名称
+			code: '', 航司代码
+			planeType: '', 机型代号
+			planeSize: '', 飞机尺寸,
+			operatingCode: '', 是否是共享航班
+			minDiscount: '', 优惠几折
+			isHasEconomyCabin: '', 是否有经济舱等
+			code: '', 航班代号
+			arrDate: '',
+			dptDate: '',
+			operatingAirlineName: '',
+			operatingCarrier: '',
+			meal: '',
+			cabinPrices: [
+				{
+					saleCabinCode: '',
+					printPrice: '',
+					salePrice: '',
+					cabinClass: '',
+					fullPrice: ''
+				}
+			]
+		}
+	]
+}
+</code></pre></div><h3 id="改签提交"><a href="#改签提交" class="header-anchor">#</a> 改签提交</h3> <p>https://flighttest.yhair.cc/yhtcback/tc/code/yhH5FlightOrderChgApply</p> <div class="language- extra-class"><pre class="language-text"><code>{
+    &quot;orderNo&quot;:&quot;YHQISHI20211203171409015&quot;,
+    &quot;type&quot;:4,
+    &quot;chgids&quot;:&quot;1760003-&quot;,
+    &quot;consumerId&quot;:&quot;hbJVx56QlwBUP9Dbv6fJPg&quot;,
+    &quot;chgOperatingCode&quot;:null,
+    &quot;chgOperatingCarrier&quot;:null,
+    &quot;chgOperatingAirlineName&quot;:null,
+    &quot;chgFlightNo&quot;:&quot;9C8930&quot;,
+    &quot;chgDepTime&quot;:&quot;06:45&quot;,
+    &quot;chgCabinCode&quot;:&quot;P1G&quot;,
+    &quot;chgPrintPrice&quot;:269,
+    &quot;chgSalePrice&quot;:269,
+    &quot;chgArrDate&quot;:&quot;2021-12-09&quot;,
+    &quot;chgArrTime&quot;:&quot;09:00&quot;,
+    &quot;chgDepDate&quot;:&quot;2021-12-09&quot;,
+    &quot;chgDepartTerminal&quot;:&quot;白云国际机场T1&quot;,
+    &quot;chgArrTerminal&quot;:&quot;虹桥机场T1&quot;,
+    &quot;isMeal&quot;:false,
+    &quot;chgCabinClass&quot;:&quot;1&quot;,
+    &quot;chgFullPrice&quot;:1950
+}
+</code></pre></div><h3 id="退票提交"><a href="#退票提交" class="header-anchor">#</a> 退票提交</h3> <p>https://flighttest.yhair.cc/yhtcback/tc/code/yhH5RefundOrder</p> <div class="language- extra-class"><pre class="language-text"><code>{
+	orderId: 1049069,          
+	pgnIds: '1760003-',
+	reasonId: 3,  1 2 自愿退票  5 其他原因退票 
+	userId: ''
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新时间:</span> <span class="time">2021-12-03 18:12:18</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/h5Flight/2-目录介绍.html" class="prev">
+        目录介绍
+      </a></span> <span class="next"><a href="/h5Flight/4-其他.html">
+        其他
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.786aee9e.js" defer></script><script src="/assets/js/2.94668460.js" defer></script><script src="/assets/js/21.2b32c666.js" defer></script>
+  </body>
+</html>
