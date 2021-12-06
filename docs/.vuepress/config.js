@@ -1,9 +1,12 @@
 const moment = require('moment');
 
 module.exports = {
-    base: '/',
+    base: '/yhdoc/',
     title: '英行前端项目文档',
     description: '英行前端项目文档',
+    head: [
+        ['link', { real: 'icon', href: '/favicon.ico' }]
+    ],
     themeConfig: {
         logo: '/logo.png',
         nav: [

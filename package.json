@@ -10,7 +10,8 @@
   "scripts": {
     "doc:dev": "vuepress dev docs",
     "doc:build": "vuepress build docs",
-    "doc:deploy": "gh-pages -d docs/dist"
+    "doc:deploy": "gh-pages -d docs/.vuepress/dist",
+    "github": "GH=1 bash deploy-gh.sh"
   },
   "dependencies": {
     "moment": "^2.29.1"
