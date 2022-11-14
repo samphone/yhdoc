@@ -2,8 +2,7 @@
 <html>
   <head>
     <title></title>
-    <script src="js/jquery.min.js"></script>
-    <meta http-equiv="Refresh" content="1.5";/> 
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <style>
     * {
@@ -72,32 +71,6 @@
       },
     };
 
-    (function () {
-      var b = 0;
-      var c = ["ms", "moz", "webkit", "o"];
-      for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) {
-        window.requestAnimationFrame = window[c[a] + "RequestAnimationFrame"];
-        window.cancelAnimationFrame =
-          window[c[a] + "CancelAnimationFrame"] ||
-          window[c[a] + "CancelRequestAnimationFrame"];
-      }
-      if (!window.requestAnimationFrame) {
-        window.requestAnimationFrame = function (h, e) {
-          var d = new Date().getTime();
-          var f = Math.max(0, 16 - (d - b));
-          var g = window.setTimeout(function () {
-            h(d + f);
-          }, f);
-          b = d + f;
-          return g;
-        };
-      }
-      if (!window.cancelAnimationFrame) {
-        window.cancelAnimationFrame = function (d) {
-          clearTimeout(d);
-        };
-      }
-    })();
 
     /*
      * Point class
@@ -283,7 +256,7 @@
         }
         context.closePath();
         // create the fill
-        var colorset = ['#ffc0cb','#ea80b0','#ffe4e1','#d8bfd8','#b0c4de','#ff878d','#a6e7ff','#9370db'];
+        var colorset = ['#ffc0cb','#ea80b0','#ffe4e1','#d8bfd8','#b0c4de','#ff878d','#99ffff','#9370db'];
         context.fillStyle = colorset[Math.floor(Math.random()*8)];
         context.fill();
         // create the image
@@ -317,7 +290,6 @@
             -dir.y
           );
         }
-
         // update and draw particles
         particles.update(deltaTime);
         particles.draw(context, image);
@@ -331,10 +303,14 @@
       window.onresize = onResize;
 
       // delay rendering bootstrap
-      setTimeout(function () {
-        onResize();
-        render();
-      }, 10);
+      // setTimeout(function () {
+      //   onResize();
+      //   render();
+      // }, 10);
+      onResize();
+      render()
+
+
     })(document.getElementById("pinkboard"));
   </script>
   </script>
